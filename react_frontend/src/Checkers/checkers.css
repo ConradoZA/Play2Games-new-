@@ -1,0 +1,80 @@
+.board {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+}
+
+.black {
+	background-color: rgb(22, 13, 4);
+	width: 8vmin;
+	height: 8vmin;
+}
+
+.white {
+	background-color: rgb(243, 213, 182);
+	width: 8vmin;
+	height: 8vmin;
+}
+
+.yellow {
+	background-color: rgb(226, 189, 26);
+	animation: Pulsing infinite 2s linear;
+}
+
+.green {
+	background-color: rgb(54, 228, 20);
+	animation: Pulsing infinite 2s linear;
+}
+.red {
+	background-color: rgba(241, 28, 28, 0.5);
+	animation: Pulsing infinite 2s linear;
+}
+
+.pieceSize {
+	margin-top: 7%;
+	margin-left: 8%;
+	width: 80%;
+	object-fit: contain;
+}
+
+.z-index-1 {
+	z-index: 1;
+}
+.capture {
+	background-color: rgba(255, 255, 255, 0.4);
+	animation: Pulsing2 infinite 2s linear;
+}
+
+@keyframes Pulsing {
+	0% {
+		opacity: 1;
+	}
+	5% {
+		opacity: 0.9;
+	}
+	50% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes Pulsing2 {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 0.9;
+	}
+	50% {
+		opacity: 0.6;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1;
+	}
+}
