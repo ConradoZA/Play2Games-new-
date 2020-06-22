@@ -1,6 +1,7 @@
 import store from "../store";
 import axios from "axios";
-import { API_URL_2 } from "../../api-config";
+import { API_URL_2, API_URL_1 } from "../../api-config";
+import { getAllGames } from "./checkerGames";
 
 const GET_HEADER = () => {
 	return "Bearer " + localStorage.getItem("authToken");
@@ -55,7 +56,7 @@ export const logout = async () => {
 	store.dispatch({
 		type: "LOGOUT",
 	});
-	return res
+	return res;
 };
 
 export const uploadImage = async (fd) => {
@@ -77,10 +78,14 @@ export const updateUser = async (user) => {
 			Authorization: GET_HEADER(),
 		},
 	});
+	const state = store.getState();
+	const oldUser = state.user.user.name;
+	await axios.put(API_URL_1 + "checkers/games/update-name", { user, oldUser });
 	store.dispatch({
 		type: "UPDATE_USER",
 		payload: res.data[0],
 	});
+	getAllGames();
 	return res.data[0];
 };
 
@@ -90,6 +95,9 @@ export const deleteUser = async () => {
 			Authorization: GET_HEADER(),
 		},
 	});
+	const state = store.getState();
+	const username = state.user.user.name;
+	await axios.put(API_URL_1 + "checkers/games/delete-user", { username });
 	store.dispatch({
 		type: "DELETE_USER",
 	});

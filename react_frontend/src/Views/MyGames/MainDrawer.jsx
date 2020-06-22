@@ -25,9 +25,9 @@ import HighlightOffRoundedIcon from "@material-ui/icons/HighlightOffRounded";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import CheckersRules from "../../Components/CheckersRules";
 import { unsetGame } from "../../Redux/actions/checkerGames";
-import SendInvitation from "./SendInvitation";
-import SendDraw from "./SendDraw";
-import SendSurrender from "./SendSurrender";
+import SendInvitation from "./Modals/SendInvitation";
+import SendDraw from "./Modals/SendDraw";
+import SendSurrender from "./Modals/SendSurrender";
 
 const drawerWidth = 190;
 

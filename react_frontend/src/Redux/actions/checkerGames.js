@@ -25,6 +25,7 @@ export const answerInvitation = async (answer, gameId) => {
 		answer,
 		gameId,
 	});
+	getAllGames();
 	return res;
 };
 

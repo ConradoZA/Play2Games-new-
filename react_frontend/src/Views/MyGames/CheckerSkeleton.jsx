@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { API_URL_IMAGES } from "../../api-config";
 import { Paper, Dialog } from "@material-ui/core";
 import { setGame } from "../../Redux/actions/checkerGames";
-import AcceptInvitation from "./AcceptInvitation";
-import AcceptDraw from "./AcceptDraw";
+import AcceptInvitation from "./Modals/AcceptInvitation";
+import AcceptDraw from "./Modals/AcceptDraw";
 
 const CheckerSkeleton = ({ game, name }) => {
 	const checkTurnNumber = () => {
@@ -57,20 +57,28 @@ const CheckerSkeleton = ({ game, name }) => {
 	return (
 		<Paper className='paper'>
 			<div className='flex pointer' onClick={goToGame}>
-				<img
-					src={API_URL_IMAGES + "warcaby-polskie.png"}
-					alt='checkers'
-					className='img-small'
-				/>
+				{playerOne === name ? (
+					<img
+						src={API_URL_IMAGES + "white_player.png"}
+						alt='checkers'
+						className='img-small'
+					/>
+				) : (
+					<img
+						src={API_URL_IMAGES + "black_player.png"}
+						alt='checkers'
+						className='img-small'
+					/>
+				)}
 				<div className='flex-column'>
 					<p>
 						<strong>Turno:</strong> {turn}
 					</p>
 					<p>
-						<strong>Turno de:</strong> {turn % 2 === 0 ? "Negras" : "Blancas"}
+						<strong>Turno de:</strong> {turn % 2 === 0 ? playerTwo : playerOne}
 					</p>
 					{!initiated && playerTwo === name ? (
-						<h4 className='red-main'>¿Quieres jugar?</h4>
+						<h4 className='draw'>¿Quieres jugar?</h4>
 					) : initiated ? (
 						<></>
 					) : (
@@ -81,6 +89,8 @@ const CheckerSkeleton = ({ game, name }) => {
 						<h4 className='red-main'>Te toca</h4>
 					) : checkTurn() && drawOffered ? (
 						<h4>Has pedido tablas</h4>
+					) : !initiated && playerTwo === name ? (
+						""
 					) : (
 						<h4>Esperando respuesta</h4>
 					)}

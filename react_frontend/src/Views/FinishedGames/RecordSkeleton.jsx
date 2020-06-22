@@ -38,13 +38,18 @@ const RecordSkeleton = ({ game, name }) => {
 	return (
 		<Paper className='paper'>
 			<div className='flex pointer' onClick={goToGame}>
-				<img
-					src={API_URL_IMAGES + "warcaby-polskie.png"}
-					alt='checkers'
-					className='img-small'
-				/>
+				{winner === name ? (
+					<img src={API_URL_IMAGES + "winner.png"} alt='you win!' className='img-small' />
+				) : winner === "draw" ? (
+					<img src={API_URL_IMAGES + "draw.png"} alt='draw' className='img-small' />
+				) : (
+					<img src={API_URL_IMAGES + "Loser.png"} alt='you lose' className='img-small' />
+				)}
 				<div className='flex-column'>
-					<p className="margin-top-results">
+					<p className='margin-top-results'>
+						Partida a <strong>Damas</strong>.
+					</p>
+					<p>
 						Partida entre<strong> {playerOne} </strong>y<strong> {playerTwo}</strong>.
 					</p>
 					<p>

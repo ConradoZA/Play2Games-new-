@@ -23,7 +23,6 @@ First run
 npm install
 ```
 to install all the node_modules.<br />
-Then edit "src/api-config copy.js" to "src/api-config.js" and configure your own variables if you need it.<br />
 <br />
 Then run
 ```bash
