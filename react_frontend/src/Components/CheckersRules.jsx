@@ -14,7 +14,7 @@ const CheckersRules = () => {
       <p>La partida termina en tablas si:</p>
       <ul>
         <li>Se repite una misma posición tres veces seguidas.</li>
-        <li>Se realizan 25 movimientos sin captura o movimiento de un peón.</li>
+        <li>Se realizan 25 movimientos sin captura.</li>
         <li>Hay acuerdo mutuo.</li>
       </ul>
       <br/>

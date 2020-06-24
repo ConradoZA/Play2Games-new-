@@ -90,6 +90,7 @@ export const surrender = async (playId, winner) => {
 		playId,
 		winner,
 	});
+	getAllGames();
 	return res;
 };
 export const endGame = async (gameId, winner) => {
@@ -97,5 +98,6 @@ export const endGame = async (gameId, winner) => {
 		gameId,
 		winner,
 	});
+	getAllGames();
 	return res;
 };

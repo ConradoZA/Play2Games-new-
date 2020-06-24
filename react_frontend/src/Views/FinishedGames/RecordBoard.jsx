@@ -12,7 +12,7 @@ const RecordBoard = ({ tablePosition }) => {
 					case "wp":
 						return (
 							<img
-								src={API_URL_IMAGES + "peon blanco.png"}
+								src={API_URL_IMAGES + "images/peon blanco.png"}
 								alt=''
 								className='pieceSize'
 								key={piece[3]}
@@ -21,7 +21,7 @@ const RecordBoard = ({ tablePosition }) => {
 					case "wq":
 						return (
 							<img
-								src={API_URL_IMAGES + "dama blanca.png"}
+								src={API_URL_IMAGES + "images/dama blanca.png"}
 								alt=''
 								className='pieceSize'
 								key={piece[3]}
@@ -30,7 +30,7 @@ const RecordBoard = ({ tablePosition }) => {
 					case "bp":
 						return (
 							<img
-								src={API_URL_IMAGES + "peon rojo.png"}
+								src={API_URL_IMAGES + "images/peon rojo.png"}
 								alt=''
 								className='pieceSize'
 								key={piece[3]}
@@ -39,7 +39,7 @@ const RecordBoard = ({ tablePosition }) => {
 					case "bq":
 						return (
 							<img
-								src={API_URL_IMAGES + "dama roja.png"}
+								src={API_URL_IMAGES + "images/dama roja.png"}
 								alt=''
 								className='pieceSize'
 								key={piece[3]}

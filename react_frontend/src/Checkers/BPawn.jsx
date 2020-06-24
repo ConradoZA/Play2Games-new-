@@ -26,11 +26,11 @@ const BPawn = ({ color, id, hasToCapture }) => {
 			{hasToCapture && myTurn ? (
 				<img
 					className='pieceSize capture'
-					src={API_URL_IMAGES + "peon rojo.png"}
+					src={API_URL_IMAGES + "images/peon rojo.png"}
 					alt=''
 				/>
 			) : (
-				<img className='pieceSize' src={API_URL_IMAGES + "peon rojo.png"} alt='' />
+				<img className='pieceSize' src={API_URL_IMAGES + "images/peon rojo.png"} alt='' />
 			)}
 		</div>
 	);

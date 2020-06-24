@@ -25,7 +25,7 @@ const MailConfirmed = (props) => {
 	return (
 		<img
 			className='img-100'
-			src={API_URL_IMAGES + "boardgames.jpg"}
+			src={API_URL_IMAGES + "images/boardgames.jpg"}
 			alt='Congrats, mail confirmed'
 		/>
 	);

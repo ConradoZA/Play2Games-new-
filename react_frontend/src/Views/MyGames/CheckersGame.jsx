@@ -55,8 +55,10 @@ const CheckersGame = (props) => {
 			} else {
 				captureTimer = props.checkersPlay.captureTimer + 1;
 			}
-			const whitePCaptured = 20 - present.filter((piece) => piece[2].includes("w")).length;
-			const blackPCaptured = 20 - present.filter((piece) => piece[2].includes("b")).length;
+			const whitePCaptured =
+				20 - present.filter((piece) => piece[2].includes("w")).length;
+			const blackPCaptured =
+				20 - present.filter((piece) => piece[2].includes("b")).length;
 			pastMoves.push(present);
 			const newTurn = {
 				id,
@@ -80,13 +82,16 @@ const CheckersGame = (props) => {
 
 	return (
 		<DndProvider options={HTML5toTouch}>
-			<div className='container'>
-				<Board />
+			<div className='flex-column center'>
+				<Button variant='contained' color='secondary' onClick={sendMove}>
+					Enviar Movimiento
+				</Button>
+				<br />
+				<div className='container'>
+					<Board />
+				</div>
 			</div>
 			<SnackBar type={type} open={open} message={message} />
-			<Button variant='contained' color='secondary' onClick={sendMove}>
-				Enviar Movimiento
-			</Button>
 		</DndProvider>
 	);
 };

@@ -33,6 +33,15 @@ export const getAllUsers = async () => {
 	return res;
 };
 
+export const getOneUser = async (name) => {
+	const res = await axios.get(API_URL_2 + `users/one=${name}`, {
+		headers: {
+			Authorization: GET_HEADER(),
+		},
+	});
+	return res;
+};
+
 export const getUserDetail = async () => {
 	const res = await axios.get(API_URL_2 + "users", {
 		headers: {

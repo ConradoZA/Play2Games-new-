@@ -9,6 +9,7 @@ const UploadModal = ({ handleUploadModal }) => {
 	const [type, setType] = useState("info");
 	const [message, setMessage] = useState("");
 	const [imageUpload, setImageUpload] = useState("");
+	const [previewUrl, setPreviewUrl] = useState("");
 
 	const openSnackBar = () => {
 		setOpen(true);
@@ -17,6 +18,15 @@ const UploadModal = ({ handleUploadModal }) => {
 			setMessage("");
 			setType("info");
 		}, 2500);
+	};
+
+	const handleChange = (event) => {
+		setImageUpload(event.target.files[0]);
+		let reader = new FileReader();
+		reader.onloadend = () => {
+			setPreviewUrl(reader.result);
+		};
+		reader.readAsDataURL(event.target.files[0]);
 	};
 
 	const handleUpload = (event) => {
@@ -56,14 +66,19 @@ const UploadModal = ({ handleUploadModal }) => {
 					<br />
 					<input
 						name='image'
-						onChange={(event) => {
-							setImageUpload(event.target.files[0]);
-						}}
+						onChange={handleChange}
 						type='file'
 						className='display-none'
 						ref={uploadRef}
 					/>
-					<input disabled type='text' value={imageUpload.name} className='vw80' />
+					{previewUrl ? (
+						<img src={previewUrl} alt='' width='200px' />
+					) : (
+						<div>
+							<br />
+							<br />
+						</div>
+					)}
 					<br />
 					<Button type='submit' size='small' variant='contained' color='primary'>
 						Subir

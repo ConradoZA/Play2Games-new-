@@ -26,11 +26,11 @@ const WPawn = ({ color, id, hasToCapture }) => {
 			{hasToCapture && myTurn ? (
 				<img
 					className='pieceSize capture'
-					src={API_URL_IMAGES + "peon blanco.png"}
+					src={API_URL_IMAGES + "images/peon blanco.png"}
 					alt=''
 				/>
 			) : (
-				<img className='pieceSize' src={API_URL_IMAGES + "peon blanco.png"} alt='' />
+				<img className='pieceSize' src={API_URL_IMAGES + "images/peon blanco.png"} alt='' />
 			)}
 		</div>
 	);

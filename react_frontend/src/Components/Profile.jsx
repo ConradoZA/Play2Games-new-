@@ -75,8 +75,8 @@ const Profile = (props) => {
 
 	return (
 		<>
-			<Paper className='paper'>
-				<div className='flex-center'>
+			<Paper className='paper profile-container'>
+				<div className='profile'>
 					<img
 						src={
 							user?.image_path.includes("http")

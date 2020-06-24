@@ -146,7 +146,7 @@ const Register = (props) => {
 								type='password'
 								validators={[
 									"minStringLength:6",
-									"matchRegexp:^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!+*=@#$%^&])(?=.{6,})",
+									"matchRegexp:^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$^+=!*()@%&.,_?`´:;çºª|· ¬¡¿])(?=.{6,})",
 								]}
 								errorMessages={[
 									"Longitud mínima: 6 caracteres",

@@ -26,11 +26,11 @@ const BQueen = ({ color, id, hasToCapture }) => {
 			{hasToCapture && myTurn ? (
 				<img
 					className='pieceSize capture'
-					src={API_URL_IMAGES + "dama roja.png"}
+					src={API_URL_IMAGES + "images/dama roja.png"}
 					alt=''
 				/>
 			) : (
-				<img className='pieceSize' src={API_URL_IMAGES + "dama roja.png"} alt='' />
+				<img className='pieceSize' src={API_URL_IMAGES + "images/dama roja.png"} alt='' />
 			)}
 		</div>
 	);
